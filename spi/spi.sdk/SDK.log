@@ -1,0 +1,259 @@
+10:53:36 INFO  : Registering command handlers for SDK TCF services
+10:53:36 INFO  : Launching XSCT server: xsct.bat -interactive C:\College\Thesis\spi_test\spi\spi.sdk\temp_xsdb_launch_script.tcl
+10:53:39 INFO  : XSCT server has started successfully.
+10:53:43 INFO  : Successfully done setting XSCT server connection channel  
+10:53:43 INFO  : Processing command line option -hwspec C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper.hdf.
+10:53:43 INFO  : Successfully done setting SDK workspace  
+10:56:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:56:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+10:56:48 INFO  : FPGA configured successfully with bitstream "C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/download.bit"
+11:06:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:06:05 INFO  : 'fpga -state' command is executed.
+11:06:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:06:05 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:06:05 INFO  : 'jtag frequency' command is executed.
+11:06:06 INFO  : Context for processor 'microblaze_0' is selected.
+11:06:06 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:06:06 INFO  : Context for processor 'microblaze_0' is selected.
+11:06:06 INFO  : Processor reset is completed for 'microblaze_0'.
+11:06:07 INFO  : Context for processor 'microblaze_0' is selected.
+11:06:10 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:06:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:06:10 INFO  : Memory regions updated for context MicroBlaze #0
+11:06:10 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:06:10 INFO  : Context for processor 'microblaze_0' is selected.
+11:06:10 INFO  : 'con' command is executed.
+11:06:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:06:10 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:07:19 INFO  : Disconnected from the channel tcfchan#1.
+11:07:21 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:07:37 INFO  : Registering command handlers for SDK TCF services
+11:07:37 INFO  : Launching XSCT server: xsct.bat -interactive C:\College\Thesis\spi_test\spi\spi.sdk\temp_xsdb_launch_script.tcl
+11:07:39 INFO  : XSCT server has started successfully.
+11:07:39 INFO  : Successfully done setting XSCT server connection channel  
+11:07:40 INFO  : Processing command line option -hwspec C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper.hdf.
+11:07:40 INFO  : Successfully done setting SDK workspace  
+11:07:40 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:08:08 INFO  : Processor reset is completed for microblaze_0
+11:08:08 ERROR : Port COM4 is already in use.
+11:09:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:09:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:09:21 INFO  : FPGA configured successfully with bitstream "C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/download.bit"
+11:09:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:09:32 INFO  : 'fpga -state' command is executed.
+11:09:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:09:32 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:09:33 INFO  : 'jtag frequency' command is executed.
+11:09:33 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:33 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:09:33 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:33 INFO  : Processor reset is completed for 'microblaze_0'.
+11:09:34 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:34 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:09:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:09:34 INFO  : Memory regions updated for context MicroBlaze #0
+11:09:34 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:09:34 INFO  : Context for processor 'microblaze_0' is selected.
+11:09:34 INFO  : 'con' command is executed.
+11:09:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:09:34 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:12:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:12:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:12:32 INFO  : FPGA configured successfully with bitstream "C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/download.bit"
+11:12:49 INFO  : Disconnected from the channel tcfchan#1.
+11:12:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:12:52 INFO  : 'fpga -state' command is executed.
+11:12:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:12:52 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:12:52 INFO  : 'jtag frequency' command is executed.
+11:12:52 INFO  : Context for processor 'microblaze_0' is selected.
+11:12:53 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:12:53 INFO  : Context for processor 'microblaze_0' is selected.
+11:12:54 INFO  : Processor reset is completed for 'microblaze_0'.
+11:12:54 INFO  : Context for processor 'microblaze_0' is selected.
+11:12:56 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:12:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:12:57 INFO  : Memory regions updated for context MicroBlaze #0
+11:12:57 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:12:57 INFO  : Context for processor 'microblaze_0' is selected.
+11:12:57 INFO  : 'con' command is executed.
+11:12:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:12:57 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:16:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:16:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:16:59 INFO  : FPGA configured successfully with bitstream "C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/download.bit"
+11:17:30 INFO  : Disconnected from the channel tcfchan#2.
+11:17:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:17:31 INFO  : 'fpga -state' command is executed.
+11:17:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:17:33 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:17:33 INFO  : 'jtag frequency' command is executed.
+11:17:33 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:34 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:17:35 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:37 INFO  : Processor reset is completed for 'microblaze_0'.
+11:17:38 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:41 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:17:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:17:41 INFO  : Memory regions updated for context MicroBlaze #0
+11:17:41 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:17:41 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:41 INFO  : 'con' command is executed.
+11:17:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:17:41 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:19:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:19:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:19:15 INFO  : FPGA configured successfully with bitstream "C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/download.bit"
+11:19:34 INFO  : Disconnected from the channel tcfchan#3.
+11:19:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:19:36 INFO  : 'fpga -state' command is executed.
+11:19:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:19:37 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:19:37 INFO  : 'jtag frequency' command is executed.
+11:19:37 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:37 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:19:37 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:37 INFO  : Processor reset is completed for 'microblaze_0'.
+11:19:38 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:39 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:19:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:19:39 INFO  : Memory regions updated for context MicroBlaze #0
+11:19:39 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:19:39 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:39 INFO  : 'con' command is executed.
+11:19:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:19:39 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:20:27 INFO  : Disconnected from the channel tcfchan#4.
+11:20:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:20:30 INFO  : 'fpga -state' command is executed.
+11:20:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:20:31 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:20:32 INFO  : 'jtag frequency' command is executed.
+11:20:32 INFO  : Context for processor 'microblaze_0' is selected.
+11:20:32 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:20:32 INFO  : Context for processor 'microblaze_0' is selected.
+11:20:35 INFO  : Processor reset is completed for 'microblaze_0'.
+11:20:35 INFO  : Context for processor 'microblaze_0' is selected.
+11:20:38 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:20:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:20:38 INFO  : Memory regions updated for context MicroBlaze #0
+11:20:38 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:20:38 INFO  : Context for processor 'microblaze_0' is selected.
+11:20:38 INFO  : 'con' command is executed.
+11:20:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:20:38 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:21:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:21:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:21:43 INFO  : FPGA configured successfully with bitstream "C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/download.bit"
+11:21:54 INFO  : Disconnected from the channel tcfchan#5.
+11:21:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys4 210274592338A" && level==0} -index 0' command is executed.
+11:21:57 INFO  : 'fpga -state' command is executed.
+11:21:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:21:58 INFO  : Jtag cable 'Digilent Nexys4 210274592338A' is selected.
+11:22:00 INFO  : 'jtag frequency' command is executed.
+11:22:00 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:00 INFO  : Hardware design information is loaded from 'C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+11:22:00 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:01 INFO  : Processor reset is completed for 'microblaze_0'.
+11:22:01 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:05 INFO  : The application 'C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf' is downloaded to processor 'microblaze_0'.
+11:22:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+loadhw C:/College/Thesis/spi_test/spi/spi.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+dow C:/College/Thesis/spi_test/spi/spi.sdk/spiApp/Debug/spiApp.elf
+----------------End of Script----------------
+
+11:22:05 INFO  : Memory regions updated for context MicroBlaze #0
+11:22:05 INFO  : Memory regions updated for context MicroBlaze Debug Module at USER2
+11:22:05 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:05 INFO  : 'con' command is executed.
+11:22:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys4 210274592338A"} -index 0
+con
+----------------End of Script----------------
+
+11:22:05 INFO  : Launch script is exported to file 'C:\College\Thesis\spi_test\spi\spi.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_spiapp.elf_on_local.tcl'
+11:24:40 INFO  : Disconnected from the channel tcfchan#6.
+11:24:42 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
