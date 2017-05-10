@@ -2,11 +2,11 @@
 # Vivado v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Wed May 10 10:44:13 2017
-# Process ID: 2776
-# Current directory: C:/College/Thesis/spi_test/spi/spi.runs/synth_1
+# Start of session at: Wed May 10 11:47:15 2017
+# Process ID: 8908
+# Current directory: C:/College/Thesis/spi_test_noFIFO/spi/spi.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file: C:/College/Thesis/spi_test/spi/spi.runs/synth_1/design_1_wrapper.vds
-# Journal file: C:/College/Thesis/spi_test/spi/spi.runs/synth_1\vivado.jou
+# Log file: C:/College/Thesis/spi_test_noFIFO/spi/spi.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/College/Thesis/spi_test_noFIFO/spi/spi.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

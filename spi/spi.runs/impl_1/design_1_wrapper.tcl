@@ -53,72 +53,72 @@ set rc [catch {
   set_property board_part digilentinc.com:nexys4:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/College/Thesis/spi_test/spi/spi.cache/wt [current_project]
-  set_property parent.project_path C:/College/Thesis/spi_test/spi/spi.xpr [current_project]
-  set_property ip_output_repo C:/College/Thesis/spi_test/spi/spi.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/College/Thesis/spi_test_noFIFO/spi/spi.cache/wt [current_project]
+  set_property parent.project_path C:/College/Thesis/spi_test_noFIFO/spi/spi.xpr [current_project]
+  set_property ip_output_repo C:/College/Thesis/spi_test_noFIFO/spi/spi.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/College/Thesis/spi_test/spi/spi.runs/synth_1/design_1_wrapper.dcp
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp]
-  add_files -quiet c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.dcp
-  set_property netlist_only true [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.dcp]
-  add_files C:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/design_1.bmm
-  set_property SCOPED_TO_REF design_1 [get_files -all C:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/design_1.bmm]
-  add_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf
-  set_property SCOPED_TO_REF design_1 [get_files -all c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
-  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
-  read_xdc -ref design_1_microblaze_0_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
-  read_xdc -ref design_1_dlmb_v10_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
-  read_xdc -ref design_1_ilmb_v10_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
-  read_xdc -ref design_1_mdm_1_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc]
-  read_xdc -prop_thru_buffers -ref design_1_clk_wiz_1_0 -cells inst c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_board.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_board.xdc]
-  read_xdc -ref design_1_clk_wiz_1_0 -cells inst c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.xdc]
-  read_xdc -prop_thru_buffers -ref design_1_rst_clk_wiz_1_100M_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_board.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_board.xdc]
-  read_xdc -ref design_1_rst_clk_wiz_1_100M_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.xdc]
-  read_xdc -prop_thru_buffers -ref design_1_axi_uartlite_0_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
-  read_xdc -ref design_1_axi_uartlite_0_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
-  read_xdc -prop_thru_buffers -ref design_1_axi_quad_spi_0_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_board.xdc]
-  read_xdc -ref design_1_axi_quad_spi_0_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.xdc
-  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.xdc]
-  read_xdc C:/College/Thesis/spi_test/spi/spi.srcs/constrs_1/new/spi.xdc
-  read_xdc -ref design_1_axi_quad_spi_0_0 -cells U0 c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_clocks.xdc
-  set_property processing_order LATE [get_files c:/College/Thesis/spi_test/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_clocks.xdc]
+  add_files -quiet C:/College/Thesis/spi_test_noFIFO/spi/spi.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp]
+  add_files -quiet C:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.dcp
+  set_property netlist_only true [get_files C:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp]
+  add_files -quiet c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.dcp
+  set_property netlist_only true [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.dcp]
+  add_files C:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/design_1.bmm
+  set_property SCOPED_TO_REF design_1 [get_files -all C:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/design_1.bmm]
+  add_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf
+  set_property SCOPED_TO_REF design_1 [get_files -all c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
+  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
+  read_xdc -ref design_1_microblaze_0_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
+  read_xdc -ref design_1_dlmb_v10_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
+  read_xdc -ref design_1_ilmb_v10_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
+  read_xdc -ref design_1_mdm_1_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_clk_wiz_1_0 -cells inst c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_board.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_board.xdc]
+  read_xdc -ref design_1_clk_wiz_1_0 -cells inst c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_rst_clk_wiz_1_100M_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_board.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_board.xdc]
+  read_xdc -ref design_1_rst_clk_wiz_1_100M_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_axi_uartlite_0_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
+  read_xdc -ref design_1_axi_uartlite_0_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_axi_quad_spi_0_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_board.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_board.xdc]
+  read_xdc -ref design_1_axi_quad_spi_0_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.xdc
+  set_property processing_order EARLY [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.xdc]
+  read_xdc C:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/constrs_1/new/spi.xdc
+  read_xdc -ref design_1_axi_quad_spi_0_0 -cells U0 c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_clocks.xdc
+  set_property processing_order LATE [get_files c:/College/Thesis/spi_test_noFIFO/spi/spi.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_clocks.xdc]
   link_design -top design_1_wrapper -part xc7a100tcsg324-1
   write_hwdef -file design_1_wrapper.hwdef
   close_msg_db -file init_design.pb

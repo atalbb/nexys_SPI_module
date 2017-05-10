@@ -227,6 +227,5 @@ int XSpi_LowLevelExample(u32 BaseAddress)
 	if ((NumBytesSent != NumBytesRcvd) || (NumBytesSent == 0)) {
 		return XST_FAILURE;
 	}
-
 	return XST_SUCCESS;
 }
