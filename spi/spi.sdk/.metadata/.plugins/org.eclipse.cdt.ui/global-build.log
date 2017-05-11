@@ -398,3 +398,1001 @@ make: Nothing to be done for `all'.
 11:58:17 **** Incremental Build of configuration Debug for project spiApp ****
 make all 
 make: Nothing to be done for `all'.
+12:40:13 **** Incremental Build of configuration Debug for project spiApp ****
+make all 
+make: Nothing to be done for `all'.
+12:42:09 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:157:5: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u8 SlaveSelect = 0x01;
+     ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11400	    324	   3244	  14968	   3a78	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+12:43:00 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:168:29: error: macro "XSpi_ReadReg" requires 2 arguments, but only 1 given
+  SlaveSelect = XSpi_ReadReg();
+                             ^
+../src/testperiph.c:168:16: error: 'XSpi_ReadReg' undeclared (first use in this function)
+  SlaveSelect = XSpi_ReadReg();
+                ^
+../src/testperiph.c:168:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:169:16: error: macro "XSpi_WriteReg" requires 3 arguments, but only 1 given
+  XSpi_WriteReg()
+                ^
+../src/testperiph.c:169:2: error: 'XSpi_WriteReg' undeclared (first use in this function)
+  XSpi_WriteReg()
+  ^
+../src/testperiph.c:174:2: error: expected ';' before 'for'
+  for (Count = 0; Count < BUFFER_SIZE; Count++) {
+  ^
+../src/testperiph.c:157:5: warning: variable 'SlaveSelect' set but not used [-Wunused-but-set-variable]
+  u8 SlaveSelect;
+     ^
+make: *** [src/testperiph.o] Error 1
+12:43:26 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+In file included from ../../spiApp_bsp/microblaze_0/include/xspi.h:307:0,
+                 from ../src/testperiph.c:73:
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../../spiApp_bsp/microblaze_0/include/xspi_l.h:102:38: error: expected expression before ')' token
+  XSpi_In32((BaseAddress) + (RegOffset))
+                                      ^
+../src/testperiph.c:168:16: note: in expansion of macro 'XSpi_ReadReg'
+  SlaveSelect = XSpi_ReadReg(BaseAddress,);
+                ^
+../src/testperiph.c:169:16: error: macro "XSpi_WriteReg" requires 3 arguments, but only 1 given
+  XSpi_WriteReg()
+                ^
+../src/testperiph.c:169:2: error: 'XSpi_WriteReg' undeclared (first use in this function)
+  XSpi_WriteReg()
+  ^
+../src/testperiph.c:169:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:174:2: error: expected ';' before 'for'
+  for (Count = 0; Count < BUFFER_SIZE; Count++) {
+  ^
+../src/testperiph.c:157:6: warning: variable 'SlaveSelect' set but not used [-Wunused-but-set-variable]
+  u32 SlaveSelect;
+      ^
+make: *** [src/testperiph.o] Error 1
+12:43:29 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:169:16: error: macro "XSpi_WriteReg" requires 3 arguments, but only 1 given
+  XSpi_WriteReg()
+                ^
+../src/testperiph.c:169:2: error: 'XSpi_WriteReg' undeclared (first use in this function)
+  XSpi_WriteReg()
+  ^
+../src/testperiph.c:169:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:174:2: error: expected ';' before 'for'
+  for (Count = 0; Count < BUFFER_SIZE; Count++) {
+  ^
+../src/testperiph.c:157:6: warning: variable 'SlaveSelect' set but not used [-Wunused-but-set-variable]
+  u32 SlaveSelect;
+      ^
+make: *** [src/testperiph.o] Error 1
+12:44:05 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:169:16: error: expected expression before '=' token
+  SlaveSelect | = 0x01;
+                ^
+../src/testperiph.c:170:16: error: macro "XSpi_WriteReg" requires 3 arguments, but only 1 given
+  XSpi_WriteReg()
+                ^
+../src/testperiph.c:170:2: error: 'XSpi_WriteReg' undeclared (first use in this function)
+  XSpi_WriteReg()
+  ^
+../src/testperiph.c:170:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:175:2: error: expected ';' before 'for'
+  for (Count = 0; Count < BUFFER_SIZE; Count++) {
+  ^
+make: *** [src/testperiph.o] Error 1
+12:44:22 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:169:16: error: expected expression before '=' token
+  SlaveSelect | = 0x01;
+                ^
+../src/testperiph.c:170:39: error: macro "XSpi_WriteReg" requires 3 arguments, but only 2 given
+  XSpi_WriteReg(BaseAddress,SlaveSelect);
+                                       ^
+../src/testperiph.c:170:2: error: 'XSpi_WriteReg' undeclared (first use in this function)
+  XSpi_WriteReg(BaseAddress,SlaveSelect);
+  ^
+../src/testperiph.c:170:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/testperiph.o] Error 1
+12:44:28 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:170:39: error: macro "XSpi_WriteReg" requires 3 arguments, but only 2 given
+  XSpi_WriteReg(BaseAddress,SlaveSelect);
+                                       ^
+../src/testperiph.c:170:2: error: 'XSpi_WriteReg' undeclared (first use in this function)
+  XSpi_WriteReg(BaseAddress,SlaveSelect);
+  ^
+../src/testperiph.c:170:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/testperiph.o] Error 1
+12:44:41 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11452	    324	   3248	  15024	   3ab0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+12:45:38 **** Incremental Build of configuration Debug for project spiApp ****
+make all 
+make: Nothing to be done for `all'.
+12:47:04 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11452	    324	   3248	  15024	   3ab0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+12:47:43 **** Incremental Build of configuration Debug for project spiApp ****
+make all 
+make: Nothing to be done for `all'.
+12:49:13 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:157:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11392	    324	   3244	  14960	   3a70	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:07:22 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:157:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11428	    324	   3248	  15000	   3a98	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:08:01 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:158:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11428	    324	   3248	  15000	   3a98	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:08:37 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:158:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WaitForDataByte':
+../src/testperiph.c:240:17: error: 'WF_SPISTATbits' undeclared (first use in this function)
+         while ((WF_SPISTATbits.SPITBF == 1) || (WF_SPISTATbits.SPIRBF == 0));
+                 ^
+../src/testperiph.c:240:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/testperiph.o] Error 1
+16:08:46 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:158:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WaitForDataByte':
+../src/testperiph.c:239:17: error: 'WF_SPISTATbits' undeclared (first use in this function)
+         while ((WF_SPISTATbits.SPITBF == 1) || (WF_SPISTATbits.SPIRBF == 0));
+                 ^
+../src/testperiph.c:239:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/testperiph.o] Error 1
+16:08:49 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:158:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WaitForDataByte':
+../src/testperiph.c:239:10: error: 'WF_SPISTATbits' undeclared (first use in this function)
+  while ((WF_SPISTATbits.SPITBF == 1) || (WF_SPISTATbits.SPIRBF == 0));
+          ^
+../src/testperiph.c:239:10: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/testperiph.o] Error 1
+16:08:55 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:158:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11428	    324	   3248	  15000	   3a98	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:10:51 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:158:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11428	    324	   3248	  15000	   3a98	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:13:03 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11428	    324	   3248	  15000	   3a98	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:14:24 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WF_SpiInit':
+../src/testperiph.c:275:9: error: 'WF_SPI_IE' undeclared (first use in this function)
+         WF_SPI_IE = 0;
+         ^
+../src/testperiph.c:275:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:282:5: error: 'WF_CS_IO' undeclared (first use in this function)
+     WF_CS_IO       = 1;
+     ^
+../src/testperiph.c:283:5: error: 'WF_CS_TRIS' undeclared (first use in this function)
+     WF_CS_TRIS     = 0;     // Drive SPI MRF24W chip select pin
+     ^
+../src/testperiph.c:293:5: warning: implicit declaration of function 'ConfigureSpiMRF24W' [-Wimplicit-function-declaration]
+     ConfigureSpiMRF24W();
+     ^
+make: *** [src/testperiph.o] Error 1
+16:14:57 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WF_SpiInit':
+../src/testperiph.c:282:5: error: 'WF_CS_IO' undeclared (first use in this function)
+     WF_CS_IO       = 1;
+     ^
+../src/testperiph.c:282:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:283:5: error: 'WF_CS_TRIS' undeclared (first use in this function)
+     WF_CS_TRIS     = 0;     // Drive SPI MRF24W chip select pin
+     ^
+../src/testperiph.c:293:5: warning: implicit declaration of function 'ConfigureSpiMRF24W' [-Wimplicit-function-declaration]
+     ConfigureSpiMRF24W();
+     ^
+make: *** [src/testperiph.o] Error 1
+16:15:50 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WF_SpiInit':
+../src/testperiph.c:293:5: warning: implicit declaration of function 'ConfigureSpiMRF24W' [-Wimplicit-function-declaration]
+     ConfigureSpiMRF24W();
+     ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+./src/testperiph.o: In function `WF_SpiInit':
+C:\College\Thesis\spi_test_noFIFO\spi\spi.sdk\spiApp\Debug/../src/testperiph.c:293: undefined reference to `ConfigureSpiMRF24W'
+collect2.exe: error: ld returned 1 exit status
+make: *** [spiApp.elf] Error 1
+16:16:07 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WF_SpiInit':
+../src/testperiph.c:293:5: warning: implicit declaration of function 'ConfigureSpiMRF24W' [-Wimplicit-function-declaration]
+     ConfigureSpiMRF24W();
+     ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+./src/testperiph.o: In function `WF_SpiInit':
+C:\College\Thesis\spi_test_noFIFO\spi\spi.sdk\spiApp\Debug/../src/testperiph.c:293: undefined reference to `ConfigureSpiMRF24W'
+collect2.exe: error: ld returned 1 exit status
+make: *** [spiApp.elf] Error 1
+16:16:27 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11464	    324	   3244	  15032	   3ab8	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:17:15 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11464	    324	   3244	  15032	   3ab8	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:19:33 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'ConfigureSpiMRF24W':
+../src/testperiph.c:358:10: error: #error Configure SPI for the selected processor
+         #error Configure SPI for the selected processor
+          ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:325:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:20:21 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WF_SpiInit':
+../src/testperiph.c:275:9: error: 'WF_SPI_IE' undeclared (first use in this function)
+         WF_SPI_IE = 0;
+         ^
+../src/testperiph.c:275:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c: In function 'ConfigureSpiMRF24W':
+../src/testperiph.c:358:10: error: #error Configure SPI for the selected processor
+         #error Configure SPI for the selected processor
+          ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:325:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:20:41 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'ConfigureSpiMRF24W':
+../src/testperiph.c:358:10: error: #error Configure SPI for the selected processor
+         #error Configure SPI for the selected processor
+          ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:325:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:20:46 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:162:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:325:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11500	    324	   3248	  15072	   3ae0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:21:05 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'ConfigureSpiMRF24W':
+../src/testperiph.c:128:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../src/testperiph.c:161:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../src/testperiph.c:244:29: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void WaitForDataByte( void ){
+                             ^
+../src/testperiph.c:271:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../src/testperiph.c:327:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../src/testperiph.c:79:13: error: old-style parameter declarations in prototyped function definition
+ static void ConfigureSpiMRF24W(void)
+             ^
+../src/testperiph.c:361:1: error: expected '{' at end of input
+ }
+ ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:79:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:21:08 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:163:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:326:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11500	    324	   3248	  15072	   3ae0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:21:29 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:163:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:326:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11464	    324	   3244	  15032	   3ab8	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:21:35 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:163:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:326:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11464	    324	   3244	  15032	   3ab8	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:22:34 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:163:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:326:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11500	    324	   3248	  15072	   3ae0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:22:55 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:164:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:327:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11500	    324	   3248	  15072	   3ae0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:23:24 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:164:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WF_SpiDisableChipSelect':
+../src/testperiph.c:439:9: error: 'WF_SPI_IE' undeclared (first use in this function)
+         WF_SPI_IE = 0;
+         ^
+../src/testperiph.c:439:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:443:5: error: 'WF_CS_IO' undeclared (first use in this function)
+     WF_CS_IO = 1;
+     ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:327:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:23:32 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:164:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:327:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11536	    324	   3244	  15104	   3b00	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:23:49 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11536	    324	   3244	  15104	   3b00	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
+16:24:56 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:475:16: error: unknown type name 'UINT8'
+ void WFSpiTxRx(UINT8   *p_txBuf,
+                ^
+../src/testperiph.c:476:16: error: unknown type name 'UINT16'
+                UINT16  txLen,
+                ^
+../src/testperiph.c:477:16: error: unknown type name 'UINT8'
+                UINT8   *p_rxBuf,
+                ^
+../src/testperiph.c:478:16: error: unknown type name 'UINT16'
+                UINT16  rxLen)
+                ^
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:25:15 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:485:9: error: unknown type name 'UINT16'
+         UINT16 byteCount;
+         ^
+../src/testperiph.c:486:9: error: unknown type name 'UINT16'
+         UINT16 i;
+         ^
+../src/testperiph.c:487:9: error: unknown type name 'UINT8'
+         UINT8  rxTrash;
+         ^
+../src/testperiph.c:508:13: error: 'WF_SSPBUF' undeclared (first use in this function)
+             WF_SSPBUF = *p_txBuf++;
+             ^
+../src/testperiph.c:508:13: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:487:16: warning: variable 'rxTrash' set but not used [-Wunused-but-set-variable]
+         UINT8  rxTrash;
+                ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:25:29 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:508:13: error: 'WF_SSPBUF' undeclared (first use in this function)
+             WF_SSPBUF = *p_txBuf++;
+             ^
+../src/testperiph.c:508:13: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:487:13: warning: variable 'rxTrash' set but not used [-Wunused-but-set-variable]
+         u8  rxTrash;
+             ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:25:40 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:514:13: error: 'WF_SSPBUF' undeclared (first use in this function)
+             WF_SSPBUF = 0xff;  /* clock out a "don't care" byte */
+             ^
+../src/testperiph.c:514:13: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:487:13: warning: variable 'rxTrash' set but not used [-Wunused-but-set-variable]
+         u8  rxTrash;
+             ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:25:44 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:523:26: error: 'WF_SSPBUF' undeclared (first use in this function)
+             *p_rxBuf++ = WF_SSPBUF;
+                          ^
+../src/testperiph.c:523:26: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:487:13: warning: variable 'rxTrash' set but not used [-Wunused-but-set-variable]
+         u8  rxTrash;
+             ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:25:51 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:529:23: error: 'WF_SSPBUF' undeclared (first use in this function)
+             rxTrash = WF_SSPBUF;  /* read and throw away byte */
+                       ^
+../src/testperiph.c:529:23: note: each undeclared identifier is reported only once for each function it appears in
+../src/testperiph.c:487:13: warning: variable 'rxTrash' set but not used [-Wunused-but-set-variable]
+         u8  rxTrash;
+             ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+make: *** [src/testperiph.o] Error 1
+16:25:59 **** Auto Build of configuration Debug for project spiApp ****
+make all 
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:487:13: warning: unused variable 'rxTrash' [-Wunused-variable]
+         u8  rxTrash;
+             ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11744	    324	   3244	  15312	   3bd0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '

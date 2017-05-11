@@ -1,6 +1,33 @@
-11:58:17 **** Incremental Build of configuration Debug for project spiApp ****
+16:25:59 **** Auto Build of configuration Debug for project spiApp ****
 make all 
-make: Nothing to be done for `all'.
+'Building file: ../src/testperiph.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/testperiph.o" -I../../spiApp_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -MMD -MP -MF"src/testperiph.d" -MT"src/testperiph.o" -o "src/testperiph.o" "../src/testperiph.c"
+../src/testperiph.c: In function 'XSpi_LowLevelExample':
+../src/testperiph.c:165:6: warning: unused variable 'SlaveSelect' [-Wunused-variable]
+  u32 SlaveSelect;
+      ^
+../src/testperiph.c: In function 'WFSpiTxRx':
+../src/testperiph.c:487:13: warning: unused variable 'rxTrash' [-Wunused-variable]
+         u8  rxTrash;
+             ^
+../src/testperiph.c: At top level:
+../src/testperiph.c:328:13: warning: 'ConfigureSpiMRF24W' defined but not used [-Wunused-function]
+ static void ConfigureSpiMRF24W(void)
+             ^
+'Finished building: ../src/testperiph.c'
+' '
+'Building target: spiApp.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../spiApp_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -o "spiApp.elf"  ./src/testperiph.o ./src/xspi_selftest_example.o   
+'Finished building target: spiApp.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size spiApp.elf  |tee "spiApp.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11744	    324	   3244	  15312	   3bd0	spiApp.elf
+'Finished building: spiApp.elf.size'
+' '
 
-11:58:17 Build Finished (took 179ms)
+16:26:00 Build Finished (took 677ms)
 

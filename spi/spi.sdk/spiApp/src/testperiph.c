@@ -73,9 +73,17 @@
 #include "xspi.h"
 #include "spi_header.h"
 #include "xil_cache.h"
+/*************************** SPI Function Prototypes ***************************/
+static inline void WaitForDataByte( void );
+void WF_SpiInit(void);
+static void ConfigureSpiMRF24W(void);
+void WF_SpiEnableChipSelect(void);
+void WF_SpiDisableChipSelect(void);
 
+/*************************** SPI Constant/Macro definitions ********************************/
+#define ClearSPIDoneFlag()  //{WF_SPI_IF = 0;}
+#define SPI_ON_BIT          //(WF_SPICON1bits.SSPEN)
 /************************** Constant Definitions ******************************/
-
 /*
  * The following constants map to the XPAR parameters created in the
  * xparameters.h file. They are defined here such that a user can easily
@@ -154,6 +162,7 @@ int main(void)
 int XSpi_LowLevelExample(u32 BaseAddress)
 {
 	u32 Control;
+	u32 SlaveSelect;
 	int NumBytesSent = 0;
 	int NumBytesRcvd = 0;
 	u32 Count;
@@ -164,7 +173,11 @@ int XSpi_LowLevelExample(u32 BaseAddress)
 	Control = XSpi_ReadReg(BaseAddress, XSP_CR_OFFSET);
 	Control |= (XSP_CR_LOOPBACK_MASK | XSP_CR_MASTER_MODE_MASK);
 	XSpi_WriteReg(BaseAddress, XSP_CR_OFFSET, Control);
-
+	/************* SLAVE SELECT TOGGLE TEST ***************
+	SlaveSelect = XSpi_ReadReg(BaseAddress,XSP_SSR_OFFSET);
+	SlaveSelect &= ~0x01;
+	XSpi_WriteReg(BaseAddress,XSP_SSR_OFFSET,SlaveSelect);
+	*******************************************************/
 
 	/*
 	 * Initialize the buffer with some data.
@@ -228,4 +241,293 @@ int XSpi_LowLevelExample(u32 BaseAddress)
 		return XST_FAILURE;
 	}
 	return XST_SUCCESS;
+}
+/* Wifi_Spi.c Functions */
+static inline void WaitForDataByte( void ){
+	//while ((WF_SPISTATbits.SPITBF == 1) || (WF_SPISTATbits.SPIRBF == 0));
+	//while (!WF_SPISTATbits.SPITBE || !WF_SPISTATbits.SPIRBF);
+}
+/*****************************************************************************
+  Function:
+	void WF_SpiInit(void)
+
+  Summary:
+	Initializes the SPI interface to the MRF24W device.
+
+  Description:
+	Configures the SPI interface for communications with the MRF24W.
+
+  Precondition:
+	None
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+
+  Remarks:
+	This function is called by WFHardwareInit.
+*****************************************************************************/
+void WF_SpiInit(void)
+{
+    /* disable the spi interrupt */
+    #if defined( __PIC32MX__ )
+        //WF_SPI_IE_CLEAR = WF_SPI_INT_BITS;
+    #else
+        //WF_SPI_IE = 0;
+    #endif
+    #if defined( __18CXX)
+        //WF_SPI_IP = 0;
+    #endif
+
+    // Set up the SPI module on the PIC for communications with the MRF24W
+    //WF_CS_IO       = 1;
+    //WF_CS_TRIS     = 0;     // Drive SPI MRF24W chip select pin
+    #if defined( __18CXX)
+        //WF_SCK_TRIS    = 0;     /* SPI Clock is an output       */
+        //WF_SDO_TRIS    = 0;     /* SPI Data Out is an output    */
+        //WF_SDI_TRIS    = 1;     /* SPI Data In is an input      */
+    #else
+        // We'll let the module control the pins.
+    #endif
+
+    #if !defined( SPI_IS_SHARED )
+    //ConfigureSpiMRF24W();
+    #endif
+
+    /* clear the completion flag */
+    ClearSPIDoneFlag();
+}
+/*****************************************************************************
+  Function:
+	void ConfigureSpiMRF24W(void)
+
+  Summary:
+	Configures the SPI interface to the MRF24W.
+
+  Description:
+	Configures the SPI interface for communications with the MRF24W.
+
+  Precondition:
+	None
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+
+  Remarks:
+	1) If the SPI bus is shared with other peripherals this function is called
+	each time an SPI transaction occurs by WF_SpiEnableChipSelect.  Otherwise it
+	is called once during initialization by WF_SpiInit.
+
+	2) Maximum SPI clock rate for the MRF24W is 25MHz.
+*****************************************************************************/
+static void ConfigureSpiMRF24W(void)
+{
+    /*----------------------------------------------------------------*/
+    /* After we save context, configure SPI for MRF24W communications */
+    /*----------------------------------------------------------------*/
+    /* enable the SPI clocks            */
+    /* set as master                    */
+    /* clock idles high                 */
+    /* ms bit first                     */
+    /* 8 bit tranfer length             */
+    /* data changes on falling edge     */
+    /* data is sampled on rising edge   */
+    /* set the clock divider            */
+    #if defined(__18CXX)
+        WF_SPICON1 = 0x20;      // SSPEN bit is set, SPI in master mode, (0x30 is for FOSC/4),
+                                //   IDLE state is low level (0x32 is for FOSC/64)
+        WF_SPISTATbits.CKE = 1; // Transmit data on falling edge of clock
+        WF_SPISTATbits.SMP = 1; // Input sampled at end of data output time
+    #elif defined(__C30__)
+        WF_SPICON1 = 0x027B;    // Fcy Primary prescaler 1:1, secondary prescaler 2:1, CKP=1, CKE=0, SMP=1
+        WF_SPICON2 = 0x0000;
+        WF_SPISTAT = 0x8000;    // Enable the module
+    #elif defined( __PIC32MX__ )
+
+        #if defined(__Digilent_Build__)
+            WF_SPI_BRG = ((GetPeripheralClock()/2ul/WF_MAX_SPI_FREQ)-1ul);
+        #else
+            WF_SPI_BRG = (GetPeripheralClock()-1ul)/2ul/WF_MAX_SPI_FREQ;
+        #endif
+
+        WF_SPICON1 = 0x00000260;    // sample at end, data change idle to active, clock idle high, master
+        WF_SPICON1bits.ON = 1;
+    #else
+        //#error Configure SPI for the selected processor
+    #endif
+}
+/*****************************************************************************
+  Function:
+	void WF_SpiEnableChipSelect(void)
+
+  Summary:
+	Enables the MRF24W SPI chip select.
+
+  Description:
+	Enables the MRF24W SPI chip select as part of the sequence of SPI
+	communications.
+
+  Precondition:
+	None
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+
+  Remarks:
+	If the SPI bus is shared with other peripherals then the current SPI context
+	is saved.
+*****************************************************************************/
+void WF_SpiEnableChipSelect(void)
+{
+    #if defined(__18CXX)
+    static volatile UINT8 dummy;
+    #endif
+
+    #if defined(SPI_IS_SHARED)
+    SaveSpiContext();
+    ConfigureSpiMRF24W();
+    #endif
+
+    /* set Slave Select low (enable SPI chip select on MRF24W) */
+    //WF_CS_IO = 0;
+
+    /* clear any pending interrupts */
+    #if defined(__18CXX)
+        dummy = WF_SSPBUF;
+        ClearSPIDoneFlag();
+    #endif
+
+
+}
+/*****************************************************************************
+  Function:
+	void WF_SpiDisableChipSelect(void)
+
+  Summary:
+	Disables the MRF24W SPI chip select.
+
+  Description:
+	Disables the MRF24W SPI chip select as part of the sequence of SPI
+	communications.
+
+  Precondition:
+	None
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+
+  Remarks:
+	If the SPI bus is shared with other peripherals then the current SPI context
+	is restored.
+*****************************************************************************/
+void WF_SpiDisableChipSelect(void)
+{
+    /* Disable the interrupt */
+    #if defined( __PIC32MX__ )
+        WF_SPI_IE_CLEAR = WF_SPI_INT_BITS;
+    #else
+       // WF_SPI_IE = 0;
+    #endif
+
+    /* set Slave Select high ((disable SPI chip select on MRF24W)   */
+    //WF_CS_IO = 1;
+
+    #if defined(SPI_IS_SHARED)
+    RestoreSpiContext();
+    #endif
+}
+/*****************************************************************************
+  Function:
+	void WFSpiTxRx(void)
+
+  Summary:
+	Transmits and receives SPI bytes
+
+  Description:
+	Transmits and receives N bytes of SPI data.
+
+  Precondition:
+	None
+
+  Parameters:
+	p_txBuf - pointer to SPI tx data
+	txLen   - number of bytes to Tx
+	p_rxBuf - pointer to where SPI rx data will be stored
+	rxLen   - number of SPI rx bytes caller wants copied to p_rxBuf
+
+  Returns:
+  	None
+
+  Remarks:
+	Will clock out the larger of txLen or rxLen, and pad if necessary.
+*****************************************************************************/
+void WFSpiTxRx(u8   *p_txBuf,
+               u16  txLen,
+               u8   *p_rxBuf,
+               u16  rxLen)
+{
+    #if defined(__18CXX)
+        static UINT16 byteCount;  /* avoid local variables in functions called from interrupt routine */
+        static UINT16 i;
+        static UINT8  rxTrash;
+    #else
+        u16 byteCount;
+        u16 i;
+        u8  rxTrash;
+    #endif
+
+
+#if defined(WF_DEBUG) && defined(WF_USE_POWER_SAVE_FUNCTIONS)
+    /* Cannot communicate with MRF24W when it is in hibernate mode */
+    {
+        static UINT8 state;  /* avoid local vars in functions called from interrupt */
+        WF_GetPowerSaveState(&state);
+        WF_ASSERT(state != WF_PS_HIBERNATE);
+    }
+#endif
+
+    /* total number of byte to clock is whichever is larger, txLen or rxLen */
+    byteCount = (txLen >= rxLen)?txLen:rxLen;
+
+    for (i = 0; i < byteCount; ++i)
+    {
+        /* if still have bytes to transmit from tx buffer */
+        if (txLen > 0)
+        {
+           // WF_SSPBUF = *p_txBuf++;
+            --txLen;
+        }
+        /* else done writing bytes out from tx buffer */
+        else
+        {
+            //WF_SSPBUF = 0xff;  /* clock out a "don't care" byte */
+        }
+
+        /* wait until tx/rx byte to completely clock out */
+        WaitForDataByte();
+
+        /* if still have bytes to read into rx buffer */
+        if (rxLen > 0)
+        {
+           // *p_rxBuf++ = WF_SSPBUF;
+            //--rxLen;
+        }
+        /* else done reading bytes into rx buffer */
+        else
+        {
+            //rxTrash = WF_SSPBUF;  /* read and throw away byte */
+        }
+    }  /* end for loop */
+
 }
